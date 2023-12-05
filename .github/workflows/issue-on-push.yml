@@ -16,8 +16,8 @@ jobs:
       - uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_ID: 1000
           PR_NUMBER: ${{ github.event.number }}
+          PR_URL: echo https://${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }}
         with:
           filename: .github/new-english-content.md
       - name: debug info
@@ -26,6 +26,5 @@ jobs:
           echo "Inside group"
           echo ${{ github.server_url }}
           echo ${{ github.repository }}
-          echo https://${{ github.server_url }}/${{ github.repository }}
+          echo https://${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }}
           echo "::endgroup::"
-        
