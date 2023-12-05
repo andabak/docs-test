@@ -4,5 +4,4 @@ assignees: andabak
 labels: bug, enhancement
 ---
 New PR was merged by: {{ payload.sender.login }}.
-PR merged = {{ env.PR_ID }}
-
+PR merged = {{ env.PR_NUMBER }}
