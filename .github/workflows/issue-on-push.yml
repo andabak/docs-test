@@ -21,5 +21,11 @@ jobs:
         with:
           filename: .github/new-english-content.md
       - name: debug info
-        run: echo "something"
+        run: |
+          echo "::group::trace"
+          echo "Inside group"
+          echo ${{ github.server_url }}
+          echo ${{ github.repository }}
+          echo https://${{ github.server_url }}/${{ github.repository }}
+          echo "::endgroup::"
         
