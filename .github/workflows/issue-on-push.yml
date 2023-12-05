@@ -17,5 +17,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_ID: 1000
+          PR_NUMBER: ${{ github.event.number }}
         with:
           filename: .github/new-english-content.md
