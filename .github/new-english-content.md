@@ -1,6 +1,8 @@
 ---
-title: There is new content in Engslih pushed
+title: There is new content in Engslih merged to main
 assignees: andabak
 labels: bug, enhancement
 ---
-Someone just pushed, oh no! Here's who did it: {{ payload.sender.login }}.
+New PR was merged by: {{ payload.sender.login }}.
+PR merged = {{ env.PR_ID }}
+
