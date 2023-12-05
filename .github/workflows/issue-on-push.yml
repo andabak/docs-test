@@ -20,3 +20,6 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         with:
           filename: .github/new-english-content.md
+      - name: debug info
+        run: echo "something"
+        
