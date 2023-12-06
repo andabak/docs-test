@@ -18,9 +18,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
           PR_URL: ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }}
-          ASSIGNEE: "andabak"
         with:
           filename: .github/new-english-content.md
+          assignees: andabak
       - name: debug info
         run: |
           echo "::group::trace"
