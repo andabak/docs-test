@@ -1,6 +1,6 @@
 ---
 title: There is new content in Engslih merged to main
-assignees: env.ASSIGNEE
+assignees: {{ env.ASSIGNEE }}
 labels: translation_req
 ---
 New PR was merged by: {{ payload.sender.login }}.
