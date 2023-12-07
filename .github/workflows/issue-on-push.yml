@@ -4,12 +4,12 @@ on:
       - main
     types: [closed]
     
-name: Create an issue on push
+name: Create an Translation Review issue on push
 permissions:
   contents: read
   issues: write 
 jobs:
-  stuff:
+  create-issues:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,13 +19,20 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
           PR_URL: ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }}
         with:
-          filename: .github/new-english-content.md
+          filename: .github/new-translation-request-japanese.md
           assignees: andabak
+
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+          PR_URL: ${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }}
+        with:
+          filename: .github/new-translation-request-korean.md
+          assignees: andabak
+
       - name: debug info
         run: |
           echo "::group::trace"
-          echo "Inside group"
-          echo ${{ github.server_url }}
-          echo ${{ github.repository }}
           echo https://${{ github.server_url }}/${{ github.repository }}/pull/${{ github.event.number }}
           echo "::endgroup::"
